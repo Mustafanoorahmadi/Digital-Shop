@@ -6,9 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "prepare": "husky",
+    "studio": "npx prisma studio",
+    "generate": "npx prisma generate",
+    "migrate": "npx prisma migrate dev"
   },
   "dependencies": {
+    "@prisma/client": "^6.6.0",
     "@radix-ui/react-slot": "^1.1.2",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
@@ -31,6 +37,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "prisma": "^6.6.0",
     "typescript": "^5"
   }
 }
