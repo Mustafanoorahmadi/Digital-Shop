@@ -9,7 +9,7 @@ import {
 import Link from 'next/link';
 import { GalleryThumbnails, Heart } from 'lucide-react';
 
-const ProductItem = (props: { product: any }) => {
+const ProdcutItem = (props: { product: any }) => {
   const { product } = props;
   return (
     <Card className="w-[400px] transform transition-transform duration-300 hover:scale-105">
@@ -47,4 +47,4 @@ const ProductItem = (props: { product: any }) => {
   );
 };
 
-export default ProductItem;
+export default ProdcutItem;
