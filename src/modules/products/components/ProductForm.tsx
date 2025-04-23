@@ -21,7 +21,7 @@ import {
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { upsertProduct } from '../services';
-// import UploadImage from './UploadImage';
+import UploadImage from './UploadImage';
 import {
   useParams,
   usePathname,
@@ -56,7 +56,7 @@ const ProductForm = (props: { product: Product | null }) => {
   };
 
   return (
-    <Card className="w-[500px] mx-auto mt-10">
+    <Card className="w-[500px] mx-auto mt-10 gap-2">
       <form className="max-w-lg" onSubmit={handleSubmit(onSubmitForm)}>
         <CardHeader>
           <CardTitle> Product</CardTitle>
@@ -133,7 +133,7 @@ const ProductForm = (props: { product: Product | null }) => {
       </form>
       {product?.id && (
         <CardFooter>
-          {/* <UploadImage productId={product?.id} /> */}
+          <UploadImage productId={product?.id} />
         </CardFooter>
       )}
     </Card>
