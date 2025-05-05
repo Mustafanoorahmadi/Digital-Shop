@@ -7,10 +7,8 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
 function CatalogList() {
-    const params = useSearchParams()
-    console.log(params)
-    const id = params.get("id")
-    console.log(id)
+  const params = useSearchParams();
+  const id = params.get("id");
   const images = DATA[0].images;
   return (
     <div className="flex flex-wrap justify-center mb-4">

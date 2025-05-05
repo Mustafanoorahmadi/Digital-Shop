@@ -7,7 +7,6 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = data;
   return (
     <div>
-      some other components...
       <Suspense fallback={<Spinner />}>
         <ProductDetailView id={id} />
       </Suspense>

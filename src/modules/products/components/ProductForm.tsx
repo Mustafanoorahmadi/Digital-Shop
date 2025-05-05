@@ -56,7 +56,7 @@ const ProductForm = (props: { product: Product | null }) => {
   };
 
   return (
-    <Card className="w-[500px] mx-auto mt-10 gap-2">
+    <Card className="w-[500px] mx-auto mt-10 ">
       <form className="max-w-lg" onSubmit={handleSubmit(onSubmitForm)}>
         <CardHeader>
           <CardTitle> Product</CardTitle>
