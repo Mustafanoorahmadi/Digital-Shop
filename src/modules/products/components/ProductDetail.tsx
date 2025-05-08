@@ -6,8 +6,10 @@ import { Button } from '@/components/ui';
 import { ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { ProductsWithImages } from '@/types';
+import { useCart } from '@/hooks/useClient';
 
 export default function ProductDetail(product: ProductsWithImages) {
+  const {addToCartMutation} = useCart()
   return (
     <div className="container mx-auto py-10">
       <Card className="max-w-3xl mx-auto">
@@ -44,6 +46,7 @@ export default function ProductDetail(product: ProductsWithImages) {
               </p>
               <Button
                 className="my-4"
+                onClick={() => addToCartMutation.mutate(product.id)}
               >
                 Add to cart
                 <ShoppingCart />
