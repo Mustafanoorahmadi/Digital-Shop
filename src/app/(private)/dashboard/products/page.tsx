@@ -1,14 +1,13 @@
 import ProductDashboardView from "@/modules/products/views/ProductDashboardView";
+import React from 'react';
 
-const page = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const data = await params;
-  const { id } = data;
-  console.log(id);
+
+function DashboardProductPage() {
   return (
     <div>
       <ProductDashboardView />
     </div>
   );
-};
+}
 
-export default page;
+export default DashboardProductPage;

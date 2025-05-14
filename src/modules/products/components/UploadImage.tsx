@@ -7,7 +7,7 @@ import { CircleX } from "lucide-react";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import { deleteImage, getImage, uploadImage } from "../services/image";
-import Spinner from "@/components/Spinner"
+import Spinner from "@/components/Spinner";
 
 const UploadImage: FC<{ productId: string }> = ({ productId }) => {
   const [file, setFile] = useState<File | null>(null);
@@ -21,12 +21,6 @@ const UploadImage: FC<{ productId: string }> = ({ productId }) => {
     } else {
       setFile(null);
     }
-  };
-
-  const fetchImages = async () => {
-    const data = await getImage(productId);
-    setImages(data?.images);
-    setLoading(false)
   };
 
   const handleUpload = async () => {
@@ -55,6 +49,12 @@ const UploadImage: FC<{ productId: string }> = ({ productId }) => {
   };
 
   useEffect(() => {
+    const fetchImages = async () => {
+      const data = await getImage(productId);
+      setImages(data?.images);
+      setLoading(false);
+    };
+
     fetchImages();
   }, [productId]);
 
