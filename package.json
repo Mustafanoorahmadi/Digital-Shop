@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "prepare": "husky",
     "prod": "next build && next start",
     "studio": "npx prisma studio",
     "generate": "npx prisma generate",
