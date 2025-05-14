@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
 
 export async function GET(req: NextRequest) {
+  console.log(req)
   const user = await currentUser();
   const userId = user?.id;
   if (userId) {

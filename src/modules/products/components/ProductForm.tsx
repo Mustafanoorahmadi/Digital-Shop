@@ -22,24 +22,8 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { upsertProduct } from '../services';
 import UploadImage from './UploadImage';
-import {
-  useParams,
-  usePathname,
-  useRouter,
-  useSearchParams,
-} from 'next/navigation';
 
 const ProductForm = (props: { product: Product | null }) => {
-  const pathName = usePathname();
-  // console.log(pathName);
-  const params = useParams();
-  // console.log(params);
-  const searchParams = useSearchParams();
-  // console.log(searchParams);
-  const discount = searchParams.get('discount');
-
-  const router = useRouter();
-  // console.log(router);
   const { product } = props;
   const { register, handleSubmit, setValue } = useForm<Product>();
 

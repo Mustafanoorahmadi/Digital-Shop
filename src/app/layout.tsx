@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Gem, ShoppingBag, ShoppingCart } from "lucide-react";
+import { Gem } from "lucide-react";
 import Link from "next/link";
 import { ClerkProvider } from "@clerk/nextjs";
 import Auth from "@/components/auth";
@@ -52,7 +52,7 @@ export default function RootLayout({
               </header>
               <div className="px-20 mt-28">{children}</div>
               <div className="my-10 mx-auto flex justify-center">
-                {/* {ads} */}
+                {ads}
               </div>
               <footer className="bg-black w-full text-white flex items-center justify-center h-10">
                 <p>&code: 2025 with Mustafa</p>
