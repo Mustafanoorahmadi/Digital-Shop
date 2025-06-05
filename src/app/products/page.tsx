@@ -1,13 +1,15 @@
-import { prisma, PrismaType } from "@/lib/prisma";
+import { prisma } from "@/lib/prisma";
 import ProductListView from "@/modules/products/views/ProductListView";
+import { ProductsWithImages } from "@/types";
 import React from "react";
 
 async function Products() {
-  const data: PrismaType.Product[] = await prisma.product.findMany();
-  console.log(data);
+  const products: ProductsWithImages[] = await prisma.product.findMany({
+    include: { images: true },
+  });
   return (
     <div>
-      <ProductListView />
+      <ProductListView products={products} />
     </div>
   );
 }

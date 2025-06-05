@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Gem } from "lucide-react";
-import Link from "next/link";
-import { ClerkProvider } from "@clerk/nextjs";
-import Auth from "@/components/auth";
+// import { ClerkProvider } from "@clerk/nextjs";
 import ReactQueryProvider from "@/providers/ReactQuery";
-import CartDropdown from "@/components/cart";
+import Header from "@/components/layout/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,26 +28,16 @@ export default function RootLayout({
   ads: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    // <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    //       </ClerkProvider>
       <ReactQueryProvider>
         <html lang="en">
           <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
           >
-            <main className="flex flex-col justify-between  min-h-screen">
-              <header className="fixed flex justify-between items-center shadow-xl bg-white px-20 w-full h-20 z-40">
-                <div className="flex items-center gap-3">
-                  <Gem />
-                  <Link href="/" className="font-bold text-2xl">
-                    Digital Shop
-                  </Link>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Auth />
-                  <CartDropdown />
-                </div>
-              </header>
-              <div className="px-20 mt-28">{children}</div>
+            <main className="flex flex-col justify-between w-full min-h-screen">
+              <Header />
+              <div className="px-20 mt-3">{children}</div>
               <div className="my-10 mx-auto flex justify-center">
                 {ads}
               </div>
@@ -61,6 +48,5 @@ export default function RootLayout({
           </body>
         </html>
       </ReactQueryProvider>
-    </ClerkProvider>
   );
 }

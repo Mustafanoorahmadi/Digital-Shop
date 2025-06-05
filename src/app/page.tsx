@@ -1,12 +1,12 @@
-import Banner from "@/components/banner";
-import Welcome from "@/components/Welcome";
+import HeroSection from "@/components/heroSection/HeroSection";
+import React from "react";
 
-export default function Home() {
-  
+export default async function Home() {
+ 
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <Banner />
-      <Welcome />
+    <div className="bg-white min-h-screen">
+      <HeroSection />
     </div>
   );
 }

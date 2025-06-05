@@ -1,4 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# پروژه فروشگاه دیجیتال (Digital Shop)
+
+این پروژه یک فروشگاه دیجیتال است که با استفاده از **Next.js**، **React**، **TypeScript** و **Prisma** توسعه داده شده است.
+
+## ساختار پروژه
+
+- **src/app/**: صفحات اصلی و روتینگ پروژه
+- **src/modules/**: ماژول‌های اصلی مانند محصولات (products)
+- **src/components/**: کامپوننت‌های عمومی رابط کاربری
+- **src/types/**: تایپ‌ها و اینترفیس‌های TypeScript
+- **prisma/**: اسکیما و تنظیمات دیتابیس
+
+## تکنولوژی‌های استفاده شده
+
+- Next.js 15 (app router)
+- React 19
+- TypeScript
+- Prisma ORM
+- TailwindCSS
+- Radix UI
+
+## نکات توسعه
+
+- دریافت داده محصولات به صورت سروری (SSR) انجام می‌شود و بهبود SEO دارد.
+- مدیریت خطا و اعتبارسنجی داده‌ها در سرویس‌های محصولات پیاده‌سازی شده است.
+- ساختار پوشه‌ای پروژه ماژولار و قابل توسعه است.
 
 ## Getting Started
 

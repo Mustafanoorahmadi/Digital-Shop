@@ -11,12 +11,19 @@ export const getProducts = async () => {
 };
 
 export const getProductsAPI = async () => {
-  // const result = await fetch("/api/product");
-  const result = await fetch('http://localhost:3000/api/product', {
-    next: { revalidate: 30 },
-  });
-  const response = await result.json();
-  return response;
+  try {
+    const result = await fetch('/api/product', {
+      next: { revalidate: 30 },
+    });
+    if (!result.ok) {
+      throw new Error('خطا در دریافت محصولات');
+    }
+    const response = await result.json();
+    return response;
+  } catch (error) {
+    console.error('getProductsAPI error:', error);
+    return { data: [], error: error?.message || 'خطای ناشناخته' };
+  }
 };
 
 export const getProductById = async (id: string) => {
@@ -31,6 +38,20 @@ export const getProductById = async (id: string) => {
 };
 
 export const upsertProduct = async (product: Product) => {
+  // اعتبارسنجی داده‌ها
+  if (!product.name || typeof product.name !== 'string' || product.name.length < 2) {
+    throw new Error('نام محصول معتبر نیست');
+  }
+  if (!product.category || typeof product.category !== 'string') {
+    throw new Error('دسته‌بندی محصول معتبر نیست');
+  }
+  if (product.price !== undefined && (typeof product.price !== 'number' || product.price < 0)) {
+    throw new Error('قیمت محصول معتبر نیست');
+  }
+  if (product.quantity !== undefined && (typeof product.quantity !== 'number' || product.quantity < 0)) {
+    throw new Error('تعداد محصول معتبر نیست');
+  }
+
   const { id } = product;
   let result;
   if (id) {
