@@ -4,6 +4,7 @@ import "./globals.css";
 // import { ClerkProvider } from "@clerk/nextjs";
 import ReactQueryProvider from "@/providers/ReactQuery";
 import Header from "@/components/layout/header";
+import Footer from "@/components/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,9 +42,7 @@ export default function RootLayout({
               <div className="my-10 mx-auto flex justify-center">
                 {ads}
               </div>
-              <footer className="bg-black w-full text-white flex items-center justify-center h-10">
-                <p>&code: 2025 with Mustafa</p>
-              </footer>
+              <Footer />
             </main>
           </body>
         </html>
